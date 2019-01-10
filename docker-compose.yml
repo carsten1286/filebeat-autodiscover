@@ -3,6 +3,8 @@ services:
   filebeat:
     image: ipunktbs/filebeat
     mem_limit: 209715200
+    cpu_period: 100000
+    cpu-quota: 25000
     command: "--strict.perms=false -v -e -d autodiscover,docker"
     user: root
     stdin_open: true
